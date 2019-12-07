@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 
 namespace Printer
 {
@@ -6,7 +8,9 @@ namespace Printer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var path = args[0];
+            var fileName = Path.GetFileName(path);
+            File.Create(fileName);
         }
     }
 }
